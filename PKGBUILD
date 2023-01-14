@@ -1,4 +1,4 @@
-# Maintainer: XIVLauncher Linux Maintainers <mixuan121@gmail.com>
+# Maintainer: XIVLauncher Linux Maintainers <chuan@ubuntu.org.cn>
 pkgname=xivlauncher-cn
 pkgver=1.0.2
 pkgrel=2
