@@ -12,4 +12,4 @@
 	makedeb -si
 	
 	
-
+[MPR https://mpr.makedeb.org/pkgbase/xivlauncher-cn](https://mpr.makedeb.org/packages/xivlauncher-cn) 
