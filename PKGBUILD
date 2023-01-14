@@ -1,7 +1,8 @@
 # Maintainer: XIVLauncher Linux Maintainers <chuan@ubuntu.org.cn>
 pkgname=xivlauncher-cn
 pkgver=1.0.2
-pkgrel=2
+_pkgver=386c6c89
+pkgrel=3
 pkgdesc="Custom Launcher for Final Fantasy XIV Online CN"
 arch=('amd64')
 url='https://github.com/ottercorp/XIVLauncher.Core'
@@ -49,7 +50,7 @@ build() {
     cd "${srcdir}/XIVLauncher.Core"
     git submodule update --init --recursive
     cd "${srcdir}/XIVLauncher.Core/src/XIVLauncher.Core/"
-    #echo "Building XIVLauncher ${pkgver}-${_pkgver:0:7}"
+    echo "Building XIVLauncher ${pkgver}-${_pkgver:}"
     dotnet publish -r linux-x64 --sc -o "${srcdir}/build" --configuration Release # -p:BuildHash=${_pkgver:0:7}
 }
 
