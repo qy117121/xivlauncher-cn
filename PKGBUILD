@@ -28,7 +28,6 @@ depends=(
     'desktop-file-utils'
     'libjxr0'
     'xdg-utils'
-    'dotnet-sdk-6.0'
 )
 makedepends_x86_64=('dotnet-sdk-6.0')
 optdepends=('steam')
