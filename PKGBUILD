@@ -31,7 +31,7 @@ depends=(
     'xdg-utils'
 )
 makedepends_x86_64=('dotnet-sdk-6.0')
-optdepends=('steam')
+optdepends=()
 options=('!strip')
 extensions=()
 provides=("xivlauncher=${pkgver}")
@@ -50,7 +50,6 @@ build() {
     cd "${srcdir}/XIVLauncher.Core"
     git submodule update --init --recursive
     cd "${srcdir}/XIVLauncher.Core/src/XIVLauncher.Core/"
-    echo "Building XIVLauncher ${pkgver}-${_pkgver:}"
     dotnet publish -r linux-x64 --sc -o "${srcdir}/build" --configuration Release # -p:BuildHash=${_pkgver:0:7}
 }
 
@@ -62,4 +61,3 @@ package() {
     cp -r "${srcdir}/build/." "${pkgdir}/opt/XIVLauncher/"
     ln -s ../../opt/XIVLauncher/XIVLauncher.Core "${pkgdir}/usr/bin/xivlauncher-cn"
 }
-
