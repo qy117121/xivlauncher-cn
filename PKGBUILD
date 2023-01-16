@@ -1,7 +1,6 @@
 # Maintainer: XIVLauncher Linux Maintainers <chuan@ubuntu.org.cn>
 pkgname=xivlauncher-cn
 pkgver=1.0.2
-_pkgver=386c6c89
 pkgrel=3
 pkgdesc="Custom Launcher for Final Fantasy XIV Online CN"
 arch=('amd64')
@@ -50,13 +49,13 @@ build() {
     cd "${srcdir}/XIVLauncher.Core"
     git submodule update --init --recursive
     cd "${srcdir}/XIVLauncher.Core/src/XIVLauncher.Core/"
-    dotnet publish -r linux-x64 --sc -o "${srcdir}/build" --configuration Release # -p:BuildHash=${_pkgver:0:7}
+    dotnet publish -r linux-x64 --sc -o "${srcdir}/build" --configuration Release
 }
 
 package() {
     install -d "${pkgdir}/usr/bin/"
     install -d "${pkgdir}/opt/XIVLauncher/"
-    install -D -m644 "${srcdir}/XIVLauncher-CN.desktop" "${pkgdir}/usr/share/applications/XIVLauncher-CN.desktop"
+    install -D -m644 "${srcdir}/XIVLauncher.desktop" "${pkgdir}/usr/share/applications/XIVLauncher.desktop"
     install -D -m644 "${srcdir}/XIVLauncher.Core/misc/linux_distrib/512.png" "${pkgdir}/usr/share/pixmaps/xivlauncher.png"
     cp -r "${srcdir}/build/." "${pkgdir}/opt/XIVLauncher/"
     ln -s ../../opt/XIVLauncher/XIVLauncher.Core "${pkgdir}/usr/bin/xivlauncher-cn"
