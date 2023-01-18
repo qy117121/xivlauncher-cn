@@ -1,4 +1,4 @@
-# Maintainer: XIVLauncher Linux Maintainers <chuan@ubuntu.org.cn>
+# Maintainer: chuan <chuan@ubuntu.org.cn>
 pkgname=xivlauncher-cn
 pkgver=1.0.2
 pkgrel=3
@@ -60,3 +60,4 @@ package() {
     cp -r "${srcdir}/build/." "${pkgdir}/opt/XIVLauncher/"
     ln -s ../../opt/XIVLauncher/XIVLauncher.Core "${pkgdir}/usr/bin/xivlauncher-cn"
 }
+
