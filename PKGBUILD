@@ -37,7 +37,7 @@ provides=("xivlauncher=${pkgver}")
 conflicts=("xivlauncher-git")
 source=(
     "XIVLauncher.Core::git+https://github.com/ottercorp/XIVLauncher.Core.git"
-    "XIVLauncher-CN.desktop"
+    "XIVLauncher.desktop"
 )
 sha512sums=(
     'SKIP'
