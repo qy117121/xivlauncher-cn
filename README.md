@@ -25,3 +25,4 @@ MPR [https://mpr.makedeb.org/pkgbase/xivlauncher-cn](https://mpr.makedeb.org/pac
 	cd /tmp
 	wget -q https://github.com/qy117121/xivlauncher-cn/raw/main/xivlauncher-cn-git.pacscript
 	pacstall -I ./xivlauncher-cn-git.pacscript
+	
