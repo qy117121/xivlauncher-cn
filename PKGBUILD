@@ -1,7 +1,7 @@
 # Maintainer: chuan <chuan@ubuntu.org.cn>
 pkgname=xivlauncher-cn
-pkgver=1.0.2
-pkgrel=3
+pkgver=1.0.2.1
+pkgrel=1
 pkgdesc="Custom Launcher for Final Fantasy XIV Online CN"
 arch=('amd64')
 url='https://github.com/ottercorp/XIVLauncher.Core'
