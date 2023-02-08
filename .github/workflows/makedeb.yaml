@@ -1,0 +1,64 @@
+name: "makedeb"
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  makedeb:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 6.0.x
+
+      - name: Setup makedeb
+        run: |
+          sudo wget -qO - "https://proget.makedeb.org/debian-feeds/makedeb.pub" | gpg --dearmor | sudo tee /usr/share/keyrings/makedeb-archive-keyring.gpg
+          sudo echo "deb [signed-by=/usr/share/keyrings/makedeb-archive-keyring.gpg arch=all] https://proget.makedeb.org makedeb main" | sudo tee /etc/apt/sources.list.d/makedeb.list
+          sudo apt update -y
+          sudo apt install -y makedeb build-essential aria2 libsdl2-2.0-0 libsecret-1-0 attr fontconfig liblcms2-2 libxml2 libxcursor1 libxrandr2 libxdamage1 libxio0 gettext libfreetype6 libglu1-mesa libsm6 libpcap0.8 libfaudio0 desktop-file-utils libjxr0 xdg-utils dotnet-sdk-6.0
+
+      - name: Makedeb
+        run: |
+          git clone https://github.com/qy117121/xivlauncher-cn.git /tmp/xivlauncher-cn
+          cd /tmp/xivlauncher-cn
+          makedeb 
+          mkdir deb
+          mv *.deb deb/
+
+      - name: Upload Artifacts (deb)
+        uses: actions/upload-artifact@v3
+        with:
+          name: xivlauncher-cn.deb
+          path: /tmp/xivlauncher-cn/deb/*.deb
+
+  release:
+    runs-on: ubuntu-20.04
+    if: ${{ startsWith(github.ref, 'refs/tags/v') }}
+    needs: makedeb
+    steps:
+      - name: Make dir
+        run: mkdir release
+      - name: get xivlauncher-cn.deb
+        uses: actions/download-artifact@v3
+        with:
+          name: xivlauncher-cn.deb
+          path: release
+
+      - name: Release
+        uses: fnkr/github-action-ghr@ghr-options
+        env:
+          GHR_PATH: release/
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          GHR_REPLACE: true
+          GHR_TITLE: ${{ needs.build-dist-bundle.outputs.version }}
+          GHR_DRAFT: true
