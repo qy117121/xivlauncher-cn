@@ -1,9 +1,9 @@
 generated-by = makedeb
 pkgname = xivlauncher-cn
 pkgbase = xivlauncher-cn
-pkgdesc = Custom Launcher for Final Fantasy XIV Online CN
-pkgrel = 3
-pkgver = 1.0.2
+pkgdesc = Custom Launcher for Final Fantasy XIV Online CN for Ubuntu (Debian please install dotnet-sdk-6.0 by yourself )
+pkgrel = 2
+pkgver = 1.0.3.0
 url = https://github.com/ottercorp/XIVLauncher.Core
 arch = amd64
 conflicts = xivlauncher-git
@@ -30,7 +30,7 @@ depends = libjxr0
 depends = xdg-utils
 license = GPL
 options = !strip
-provides = xivlauncher=1.0.2
+provides = xivlauncher=1.0.3.0
 source = XIVLauncher.Core::git+https://github.com/ottercorp/XIVLauncher.Core.git
 source = XIVLauncher.desktop
 sha512sums = SKIP

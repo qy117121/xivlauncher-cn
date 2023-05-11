@@ -1,8 +1,8 @@
 # Maintainer: chuan <chuan@ubuntu.org.cn>
 pkgname=xivlauncher-cn
 pkgver=1.0.3.0
-pkgrel=1
-pkgdesc="Custom Launcher for Final Fantasy XIV Online CN"
+pkgrel=2
+pkgdesc="Custom Launcher for Final Fantasy XIV Online CN for Ubuntu (Debian please install dotnet-sdk-6.0 by yourself )"
 arch=('amd64')
 url='https://github.com/ottercorp/XIVLauncher.Core'
 license=('GPL')
