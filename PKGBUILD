@@ -1,6 +1,6 @@
 # Maintainer: chuan <chuan@ubuntu.org.cn>
 pkgname=xivlauncher-cn
-pkgver=1.0.4.0
+pkgver=1.0.6.2
 pkgrel=1
 pkgdesc="Custom Launcher for Final Fantasy XIV Online CN for Ubuntu (Debian please install dotnet-sdk-6.0 by yourself )"
 arch=('amd64')
@@ -49,7 +49,7 @@ build() {
     cd "${srcdir}/XIVLauncher.Core"
     git submodule update --init --recursive
     cd "${srcdir}/XIVLauncher.Core/src/XIVLauncher.Core/"
-    dotnet publish -r linux-x64 --sc -o "${srcdir}/build" --configuration Release
+    dotnet publish -r linux-x64 --sc --configuration Release -p:DefineConstants=WINE_XIV_UBUNTU_LINUX -o "${srcdir}/build"
 }
 
 package() {
