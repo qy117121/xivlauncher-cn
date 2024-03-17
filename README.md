@@ -14,18 +14,7 @@
 	
 MPR [https://mpr.makedeb.org/pkgbase/xivlauncher-cn](https://mpr.makedeb.org/packages/xivlauncher-cn) 
 
-# xivlauncher-cn pacstall 
 
-##  安装 pacstall 
-
-    sudo bash -c "$(curl -fsSL https://git.io/JsADh || wget -q https://git.io/JsADh -O -)"
-
-## pacstall 安装xivlauncher-cn
-
-	cd /tmp
-	wget -q https://github.com/qy117121/xivlauncher-cn/raw/main/xivlauncher-cn-git.pacscript
-	pacstall -I ./xivlauncher-cn-git.pacscript
-	
 
 
 XIVLauncher Core 具有适用于各种 Linux 发行版的社区包。 请注意，**只有 Flathub 版本是官方版本**，但其他版本是由社区成员**打包**。 社区包可能并不总是最新的，或者可能有损坏的版本或包含正在测试的功能（特别是如果标记为不稳定或 git）。 我们对其安全性或可靠性不承担任何责任。
