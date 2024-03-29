@@ -5,6 +5,7 @@ arch=('amd64')
 pkgver="1.0.7.0"
 pkgrel="1"
 repology=("project: ${gives}")
+maintainer="Chuan <chuan@ubuntu.org.cn>"
 homepage='https://github.com/ottercorp/XIVLauncher.Core'
 url="https://github.com/ottercorp/XIVLauncher.Core/releases/download/${pkgver}/XIVLauncher.Core.tar.gz"
 makedepends=( )
