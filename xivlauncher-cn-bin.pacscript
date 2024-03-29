@@ -11,8 +11,7 @@ url="https://github.com/ottercorp/XIVLauncher.Core/releases/download/${pkgver}/X
 makedepends=( )
 depends=("aria2" "libsdl2-2.0-0" "libsecret-1-0" "desktop-file-utils" "libjxr0" "xdg-utils")
 pkgdesc="Custom Launcher for Final Fantasy XIV Online CN for Ubuntu/Debian"
-hash="76360c63233a4eec08d0f7fa99aaaef57458eaa8099d121c5e4e93c25af50b8a0"
-
+hash="6360c63233a4eec08d0f7fa99aaaef57458eaa8099d121c5e4e93c25af50b8a0"
 
 package() {
     cd ..
