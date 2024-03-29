@@ -34,4 +34,5 @@ post_install() {
 
 post_remove() {
   sudo rm "/usr/bin/xivlauncher-cn"
-  sudo rm -r "/opt/xivlauncher-cn"}
+  sudo rm -r "/opt/xivlauncher-cn"
+}
