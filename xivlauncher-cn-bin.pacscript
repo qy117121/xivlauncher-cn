@@ -23,7 +23,7 @@ package() {
     sudo wget "https://raw.githubusercontent.com/ottercorp/XIVLauncher.Core/main/misc/linux_distrib/512.png" -O xivlauncher.png 
     sudo wget -q "https://github.com/qy117121/xivlauncher-cn/raw/main/XIVLauncher.desktop"
     sudo mv "XIVLauncher.desktop" "${pkgdir}/usr/share/applications/XIVLauncher.desktop"
-    sudo mv "xivlauncher.png" "${pkgdir}/usr/share/pixmaps"
+    sudo cp "xivlauncher.png" "${pkgdir}/usr/share/pixmaps"
     sudo cp -R * "${pkgdir}/opt/${gives}"
 
 }
@@ -32,7 +32,3 @@ post_install() {
   sudo ln -sf "/opt/xivlauncher-cn/XIVLauncher.Core" "/usr/bin/xivlauncher-cn"
 }
 
-post_remove() {
-  sudo rm "/usr/bin/xivlauncher-cn"
-  sudo rm -r "/opt/xivlauncher-cn"
-}
