@@ -1,6 +1,6 @@
 # Maintainer: chuan <chuan@ubuntu.org.cn>
 pkgname=xivlauncher-cn
-pkgver=1.0.7.1
+pkgver=1.0.7.2
 pkgrel=1
 pkgdesc="Custom Launcher for Final Fantasy XIV Online CN for Ubuntu/Debian"
 arch=('amd64')
@@ -25,7 +25,7 @@ source=(
     "XIVLauncher.desktop"
 )
 sha512sums=(
-    '17d083aaf5bccba8bb061f746bde8dead4bf02fa43502f8475835d26dc6552947da085c9e63a61fde720bd71bba099b9ab883659d2fb81ac12a1a72e1be6ba7e'
+    '887270b58c3e8453e0384e11952838d86b9ca6ba259f497e9a8a02a8f6717b028dad5ae2520ecac9fe8dd05b6294947e488ddf76c6e365dcdefb23533783f18b'
     '637150af398fce40905c301f2c5953897769043cc1e5a52e7af8c6c83e13f50e48e707dd3b8b8dc554154fc825f3d0985716289c0a974059adaa3cabe7fe46a2'
 )
 
